@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Candidat(models.Model):
-      SEX = (
-	        ('M', 'Male'),
-	        ('F', 'Female'),
+    SEX = (
+        ('H','Homme'),
+        ('F','Femme'),
     )
     nom = models.CharField(max_length=20)
     prenom = models.CharField(max_length=20)
