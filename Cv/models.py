@@ -37,6 +37,6 @@ class Cv(models.Model):
     certificat = models.ForeignKey('Certificat',on_delete=models.CASCADE)
     projet_realise = models.ForeignKey('Projet_realise',on_delete=models.CASCADE)
     academic = models.ForeignKey('Academic',on_delete=models.CASCADE)
-    candidat = models.ForeignKey('candidat.Candidat',on_delete=models.CASCADE)
+    candidat = models.ForeignKey('candidat.Candidat',on_delete=models.CASCADE ,unique=True)
 
 
