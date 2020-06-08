@@ -5,6 +5,7 @@ from .models import Cv,Experience_Pro,Language,Certificat,Projet_realise,Ecole,A
 
 # Register your models here.
 admin.site.register(Cv)
+admin.site.register(Experience_Pro)
 
 class Experience_ProInline(admin.TabularInline):
     model = Experience_Pro
