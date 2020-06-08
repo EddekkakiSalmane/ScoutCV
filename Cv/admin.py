@@ -6,24 +6,24 @@ from .models import Cv,Experience_Pro,Language,Certificat,Projet_realise,Ecole,A
 # Register your models here.
 admin.site.register(Cv)
 
-class Experience_ProInline(admin.StackedInline):
+class Experience_ProInline(admin.TabularInline):
     model = Experience_Pro
 
 
-class LanguageInline(admin.StackedInline):
+class LanguageInline(admin.TabularInline):
     model = Language
 
-class CertificatInline(admin.StackedInline):
+class CertificatInline(admin.TabularInline):
     model = Certificat
 
 
-class Projet_realiseInline(admin.StackedInline):
+class Projet_realiseInline(admin.TabularInline):
     model = Projet_realise
 
-class EcoleInline(admin.StackedInline):
+class EcoleInline(admin.TabularInline):
     model = Ecole
 
-class AcademicInline(admin.StackedInline):
+class AcademicInline(admin.TabularInline):
     model = Academic
 
 class CvModelsAdmin(admin.ModelAdmin):

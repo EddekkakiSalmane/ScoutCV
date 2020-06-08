@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from candidat.views import candidat_create
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('createCandidat/',candidat_create)
 ]
