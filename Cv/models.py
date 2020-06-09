@@ -9,7 +9,7 @@ class Experience_Pro(models.Model):
 
 class Language(models.Model):
     langue = models.CharField(max_length=20)
-    level = models.TextField(null=True,blank=True)
+    level = models.IntegerField()
     
 class Certificat(models.Model):
     accreditation = models.CharField(max_length=100)

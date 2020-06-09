@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from candidat.views import candidat_create
+from Cv.views import cv_create
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('createCandidat/',candidat_create)
+    path('createCandidat/',candidat_create),
+    path('createCv/',cv_create)
+    
 ]
