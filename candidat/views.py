@@ -1,27 +1,30 @@
 from django.shortcuts import render
-from .models import Candidat
-from candidat.forms import CandidatForm
+from .models import *
+from candidat.forms import *
 
 # Create your views here.
 
 # def candidat_create(request):
-#     my_form = CandidatForm()
-#     if request.method == "POST":
-#         my_form= CandidatForm(request.POST)
-#         if my_form.is_valid():        
-#             Candidat.objects.create(**my_form.cleaned_data)
+#     form = CandidatForm(request.POST or None)
+#     if form.is_valid():
+#         form.save()
+#         form=CandidatForm()
+
 #     context = {
-#         "form": my_form
+#         'form' : form
 #     }
-#     return render(request , "candidat/createformCandidat.html",context)
+#     return render(request , "candidats/createformCandidat.html",context)
 
 def candidat_create(request):
-    form = CandidatForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        form=CandidatForm()
+    formExperience_Pro = Experience_ProForm(request.POST,prefix='formExperience_Pro')
+    print(request.user)
+    if formExperience_Pro.is_valid():        
+        candidat = Candidat.objects.get(request.user)
+        exp_pro = Experience_Pro.objects.get()
+        candidat.Experience_Pro = exp_pro
+        formExperience_Pro.create()
 
     context = {
-        'form' : form
+        'formExperience_Pro' : formExperience_Pro
     }
     return render(request , "candidats/createformCandidat.html",context)
