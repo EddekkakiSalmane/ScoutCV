@@ -17,7 +17,7 @@ class Certificat(models.Model):
     date_cert = models.IntegerField()
 
 class Projet_realise(models.Model):
-    annee_prjet = models.IntegerField()
+    annee_projet = models.IntegerField()
     description_projet = models.TextField(null=True,blank=True)
 
 class Ecole(models.Model):
@@ -37,6 +37,6 @@ class Cv(models.Model):
     certificat = models.ForeignKey('Certificat',on_delete=models.CASCADE)
     projet_realise = models.ForeignKey('Projet_realise',on_delete=models.CASCADE)
     academic = models.ForeignKey('Academic',on_delete=models.CASCADE)
-    candidat = models.ForeignKey('candidat.Candidat',on_delete=models.CASCADE ,unique=True)
+    candidat = models.OneToOneField('candidat.Candidat',on_delete=models.CASCADE ,unique=True)
 
 
