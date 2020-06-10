@@ -1,28 +1,35 @@
 from django import forms
-from Cv.models import Cv,Experience_Pro,Projet_realise,Ecole,Academic,Language,Certificat
+from Cv.models import *
 
-class CvForm(forms.Form):
-    annee_debut = forms.IntegerField()
-    annee_fin = forms.IntegerField()
-    description_exp_pro = forms.CharField(max_length=100)
-
-    annee_prjet = forms.IntegerField()
-    description_projet = forms.CharField(max_length=100)
-
+class AcademicForm(forms.ModelForm):
     class Meta: 
-        model = Cv     
-        fields = "Ecole"
+        model = Projet_realise
+        fields = ("__all__")
 
-    annee_debut = forms.IntegerField()
-    annee_fin = forms.IntegerField()
-    type_diplome = forms.CharField(max_length=10)
-    description_academic = forms.CharField(max_length=100)
-    
-    langue = forms.CharField(max_length=20)
-    level = forms.IntegerField()
+class Experience_ProForm(forms.ModelForm):
+    class Meta: 
+        model = Experience_Pro
+        fields = ("__all__")
 
-    accreditation = forms.CharField(max_length=100)
-    titre_cert = forms.CharField(max_length=50)
-    date_cert = forms.IntegerField()
 
-   
+class Projet_realiseForm(forms.ModelForm):
+    class Meta: 
+        model = Projet_realise
+        fields = ("__all__")
+
+
+class CertificatForm(forms.ModelForm):
+    class Meta: 
+        model = Certificat
+        fields = ("__all__")
+
+
+class LanguageForm(forms.ModelForm):
+    class Meta: 
+        model = Language
+        fields = ("__all__")
+
+class CvForm(forms.ModelForm):
+    class Meta:
+        model = Cv
+        fields = "__all__"

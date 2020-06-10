@@ -8,7 +8,16 @@
     <h1>Hello Candidat</h1>
 
     <form method="POST"> {% csrf_token %}
-        {{ form.as_p }}
+        <h1>Academic</h1>
+        {{ formAcademic.as_p }}
+        <h1>Expreince pro</h1>
+        {{ formExperience_Pro.as_p }}
+        <h1>Projet realise</h1>
+        {{ formProjet_realise.as_p }}
+        <h1>Certificat</h1>
+        {{ formCertificat.as_p }}
+        <h1>Langue</h1>
+        {{ formLanguage.as_p }}
         <input type="submit" value='Save'>
     </form>
     
